@@ -5,11 +5,13 @@ def perform_operation(num1,num2,operation):
         return num1-num2
     elif operation == 'multiply':
         return num1*num2
-    elif operation == 'divide':
-        if num2 != 0:
-            return num1/num2
+    elif "divide" in operation:
+        if num2 == 0:
+            return "Cannot divide by zero."
         else:
-            return "I cann't do this operation."
+            return num1 / num2
+    else:
+        return "Enter a valid operation."
 def main():
     print("Arithmetic Operations")
     num1 = float(input("Enter the first number: "))
